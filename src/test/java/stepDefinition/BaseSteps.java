@@ -1,12 +1,15 @@
 package stepDefinition;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.AutoCloseableBDDSoftAssertions;
+import utils.APIutils;
 import utils.ConfigManager;
 
 import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 
 public class BaseSteps {
 
@@ -40,6 +43,9 @@ public class BaseSteps {
 		deleteIssueAttachmentEndpoint = ConfigManager.getProperty("api.delete.issue.attachment.endpoint");
 		jiraUserName = System.getenv("jiraUserName");
 		jiraToken = System.getenv("jiraToken");
+		request = given()
+				.auth().preemptive().basic(jiraUserName, jiraToken)
+				.contentType(ContentType.JSON);
 
 	}
 
