@@ -1,11 +1,13 @@
 package stepDefinition;
 
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
@@ -24,9 +26,21 @@ public class UserSteps extends BaseSteps {
 
     ObjectMapper mapper = new ObjectMapper();
 
+import io.restassured.http.ContentType;
+import pojo.response.User;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.BDDAssertions.then;
+import static utils.APIutils.*;
+
+
     @When("I send a GET request to users endpoint")
     public void iSendAGETRequestToUsersEndpoint() {
         response = request.get(allUsersEndpoint);
+
 
         response = given().contentType("application/json").auth().preemptive().basic(jiraUserName, jiraToken).get(allUsersEndpoint);
 
@@ -83,6 +97,7 @@ public class UserSteps extends BaseSteps {
         });
         then(users.size()).isEqualTo(number);
         LOGGER.info("The response should contain {int} users");
+
     }
 
     @When("I send a Get request to users with wrong endpoint")
@@ -95,9 +110,25 @@ public class UserSteps extends BaseSteps {
 
     }
 
+
     @Then("Error message should be  {string}")
     public void errorMessageShouldBe(String message) {
         Assertions.assertThat(message.equals(response.jsonPath().getString("message")));
+
+    @When("I send a GET request to users endpoint with {string} and {string}")
+    public void iSendAGETRequestToUsersEndpointWithAnd(String startAt, String maxResults) {
+        Map<String,String> queryParams = new HashMap<>();
+        queryParams.put("startAt", startAt);
+        queryParams.put("maxResults", maxResults);
+
+        response = sendGetRequest(request, allUsersEndpoint, queryParams);
+    }
+
+    @And("The response should contain {int} users")
+    public void theResponseShouldContainUsers(int number) {
+        List<User> users = response.as(new TypeRef<>() {});
+        then(users.size()).isEqualTo(number);
+
     }
 }
 
