@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AvatarUrls {
+
     @JsonProperty("16x16")
     private String a1616;
+
     @JsonProperty("24x24")
     private String a2424;
 
