@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Groups {
-    String [] items = new String[0];
-    private int size;
+
+	String[] items = new String[0];
+
+	private int size;
+
 }

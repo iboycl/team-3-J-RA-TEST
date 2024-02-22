@@ -10,10 +10,8 @@ import lombok.NoArgsConstructor;
 
 public class ApplicationRoles {
 
-    String [] items = new String[0];
-    private int size;
+	String[] items = new String[0];
 
-
-
+	private int size;
 
 }
