@@ -1,6 +1,9 @@
 @UserSearch
 Feature: Validate User Search Procedure
 
+  Background:
+    Given The user has Authentication and ready to connect
+
   Scenario Outline: Validate user search
     When I send a GET request to user search endpoint with "<queryParam>"
     Then The response status code should be <statusCode>

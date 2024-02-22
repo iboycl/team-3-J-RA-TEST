@@ -1,6 +1,9 @@
 @Issues
   Feature: Issue Procedures
 
+    Background:
+      Given The user has Authentication and ready to connect
+
     Scenario: Validate creation of an issue
 
       When I set the request body for creating a new issue

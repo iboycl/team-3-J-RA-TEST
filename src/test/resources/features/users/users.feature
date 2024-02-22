@@ -1,6 +1,9 @@
 @User
   Feature: Validate User Procedures
 
+    Background:
+      Given The user has Authentication and ready to connect
+
     Scenario Outline: Validate get all users
       When I send a GET request to users endpoint with "<startAt>" and "<maxResults>"
       Then The response status code should be 200

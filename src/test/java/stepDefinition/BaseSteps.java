@@ -38,9 +38,9 @@ public class BaseSteps {
 
 	protected String deleteIssueAttachmentEndpoint;
 
-	protected String jiraUserName;
+	protected String jiraUserName = System.getenv("jiraUserName");
 
-	protected String jiraToken;
+	protected String jiraToken = System.getenv("jiraToken");
 
 	public BaseSteps() {
 		baseURI = ConfigManager.getProperty("base.uri");

@@ -12,8 +12,8 @@ import static org.assertj.core.api.BDDAssertions.then;
 public class CommonSteps extends BaseSteps {
 
 	private static final Logger LOGGER = LogManager.getLogger(CommonSteps.class);
-	static String jiraUserName = null;
-	static String jiraToken = null;
+	static String jiraUserName;
+	static String jiraToken;
 
 	@Then("The response status code should be {int}")
 	public void theResponseStatusCodeShouldBe(int statusCode) {
