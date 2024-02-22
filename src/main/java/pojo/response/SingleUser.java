@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+
+public class SingleUser {
 
 	private String accountId;
 
@@ -15,9 +16,15 @@ public class User {
 
 	private boolean active;
 
+	private ApplicationRoles applicationRoles;
+
 	private AvatarUrls avatarUrls;
 
 	private String displayName;
+
+	private String emailAddress;
+
+	private Groups groups;
 
 	private String key;
 
@@ -25,10 +32,10 @@ public class User {
 
 	private String self;
 
+	private String timeZone;
+
 	private String locale;
 
-	private String emailAddress;
-
-	private String timeZone;
+	private String expand;
 
 }
