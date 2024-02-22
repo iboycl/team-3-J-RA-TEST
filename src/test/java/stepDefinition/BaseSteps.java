@@ -15,7 +15,7 @@ public class BaseSteps {
 
 	protected static Response response;
 
-	protected RequestSpecification request;
+	protected static RequestSpecification request;
 
 	protected AutoCloseableBDDSoftAssertions soft = new AutoCloseableBDDSoftAssertions();
 
@@ -41,12 +41,6 @@ public class BaseSteps {
 		recentProjectEndpoint = ConfigManager.getProperty("api.recent.project.endpoint");
 		projectEndpoint = ConfigManager.getProperty("api.project.endpoint");
 		deleteIssueAttachmentEndpoint = ConfigManager.getProperty("api.delete.issue.attachment.endpoint");
-		jiraUserName = System.getenv("jiraUserName");
-		jiraToken = System.getenv("jiraToken");
-		request = given()
-				.auth().preemptive().basic(jiraUserName, jiraToken)
-				.contentType(ContentType.JSON);
-
 	}
 
 }
