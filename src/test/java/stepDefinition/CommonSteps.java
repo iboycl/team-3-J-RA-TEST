@@ -27,8 +27,8 @@ public class CommonSteps extends BaseSteps {
 			jiraUserName = System.getenv("jiraUserName");
 			jiraToken = System.getenv("jiraToken");
 		}
-		request = given().auth().preemptive().basic(jiraUserName, jiraToken)
-				.contentType(ContentType.JSON);
+		request = given().auth().preemptive().basic(jiraUserName, jiraToken).contentType(ContentType.JSON);
 
 	}
+
 }

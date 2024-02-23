@@ -42,6 +42,10 @@ public class BaseSteps {
 
 	protected String jiraToken = System.getenv("jiraToken");
 
+	protected static String commentText;
+
+	protected static String commentId;
+
 	public BaseSteps() {
 		baseURI = ConfigManager.getProperty("base.uri");
 		allUsersEndpoint = ConfigManager.getProperty("api.all.users.endpoint");
