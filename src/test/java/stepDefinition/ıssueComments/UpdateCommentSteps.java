@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.ıssueComments;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -6,12 +6,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import pojo.request.UpdateComment;
+import stepDefinition.BaseSteps;
 import utils.APIutils;
 import utils.TestDataReader;
 
 import java.io.IOException;
 
-public class UpdateCommentSteps extends BaseSteps{
+public class UpdateCommentSteps extends BaseSteps {
 
     private static final Logger LOGGER = LogManager.getLogger(UpdateCommentSteps.class);
 
