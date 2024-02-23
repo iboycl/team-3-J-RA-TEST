@@ -25,7 +25,6 @@ public class CommonSteps extends BaseSteps {
 			jiraToken = System.getenv("jiraToken");
 		}
 		request = given().auth().preemptive().basic(jiraUserName, jiraToken).contentType(ContentType.JSON);
-
 	}
 
 	@And("The authentication is completed to reach jira apis")
@@ -37,6 +36,7 @@ public class CommonSteps extends BaseSteps {
 
 		logger.info("The authentication is completed to reach jira apis");
 	}
+
 
 	@Then("The status code should be {int}")
 	public void theStatusCodeShouldBe(int statusCode) {
