@@ -1,7 +1,10 @@
 package pojo.request.issue;
 
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class Description {
@@ -10,6 +13,10 @@ public class Description {
 
 	private int version;
 
-	private List<ContentItem> content;
+	private List<Content> content;
+
+	public Description() {
+		this.content = List.of(new Content());
+	}
 
 }
