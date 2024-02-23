@@ -11,23 +11,6 @@ import java.nio.file.Paths;
 
 public class TestDataReader {
 
-    @SneakyThrows
-    public static <T> T dataReader(String path, Class<T> typeValue){
-        ObjectMapper mapper = new ObjectMapper();
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/test_data/" + path);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
-            return mapper.readValue(fileInputStream, typeValue);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static <T> T readData(String path, Class<T> valueType) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         FileInputStream fileInputStream;

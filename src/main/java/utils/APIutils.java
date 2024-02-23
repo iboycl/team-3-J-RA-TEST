@@ -58,12 +58,6 @@ public class APIutils {
 	}
 
 
-
-	public static Response sendPostRequest(RequestSpecification request, String endpoint, Object body) {
-		return request.contentType(ContentType.JSON).accept(ContentType.JSON).body(body).when().post(endpoint);
-	}
-
-
 	public static JsonObject createCommentRequestBody(Map<String ,String> commentDetails){
 		JsonObject commentPayload = new JsonObject();
 		JsonObject body = new JsonObject();
