@@ -22,7 +22,7 @@ public class addAttachmentSteps extends BaseSteps {
 			throws IOException {
 		String endpoint = issueEndpoint + "/" + key + "/attachments";
 
-		File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-3.txt");
+		File file = new File(System.getProperty("user.dir") + "/src/test/resources/testData/team-3.txt");
 
 		response = APIutils.sendPostRequest(request, endpoint, "file", file);
 
@@ -52,7 +52,7 @@ public class addAttachmentSteps extends BaseSteps {
 	public void theUserSendsPOSTRequestToAddAttachmentEndpointWithInvalidIdWithTxtFile(String invalidIssueKey) {
 		String endpoint = issueEndpoint + "/" + invalidIssueKey + "/attachments";
 
-		File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-3.txt");
+		File file = new File(System.getProperty("user.dir") + "/src/test/resources/testData/team-3.txt");
 
 		response = APIutils.sendPostRequest(request, endpoint, "file", file);
 
