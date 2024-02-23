@@ -12,12 +12,13 @@ public class BaseSteps {
 
 	protected static Response response;
 
-	protected RequestSpecification request;
+	protected static RequestSpecification request;
 
 	protected AutoCloseableBDDSoftAssertions soft = new AutoCloseableBDDSoftAssertions();
 
 	protected ObjectMapper mapper = new ObjectMapper();
 
+	protected String deleteIssue;
 	protected String allUsersEndpoint;
 	protected String issueEndpoint;
 	protected String userEndpoint;
@@ -25,6 +26,7 @@ public class BaseSteps {
 	protected String recentProjectEndpoint;
 	protected String projectEndpoint;
 	protected String deleteIssueAttachmentEndpoint;
+	protected static String attachmentId;
 
 	protected String jiraUserName;
 	protected String jiraToken;
@@ -40,6 +42,7 @@ public class BaseSteps {
 		deleteIssueAttachmentEndpoint = ConfigManager.getProperty("api.delete.issue.attachment.endpoint");
 		jiraUserName = System.getenv("jiraUserName");
 		jiraToken = System.getenv("jiraToken");
+		deleteIssue= ConfigManager.getProperty("api.delete.issue.endpoint");
 
 	}
 
