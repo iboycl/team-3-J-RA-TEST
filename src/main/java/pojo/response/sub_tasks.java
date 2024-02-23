@@ -11,8 +11,6 @@ public class sub_tasks {
 
 	private String id;
 
-
-
 	private Type type;
 
 }

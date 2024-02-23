@@ -8,8 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class customfield_10018 {
-    private boolean hasEpicLinkFieldDependency;
-    private boolean showField;
-    private nonEditableReason nonEditableReason;
+
+	private boolean hasEpicLinkFieldDependency;
+
+	private boolean showField;
+
+	private nonEditableReason nonEditableReason;
 
 }

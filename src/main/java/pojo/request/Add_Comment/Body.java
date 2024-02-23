@@ -3,33 +3,35 @@ package pojo.request.Add_Comment;
 import java.util.List;
 
 public class Body {
-    private String type;
 
-    private int version;
+	private String type;
 
-    private List<Content> content;
+	private int version;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	private List<Content> content;
 
-    public String getType() {
-        return type;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public void setVersion(int version) {
-        this.version = version;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public int getVersion() {
-        return version;
-    }
+	public void setVersion(int version) {
+		this.version = version;
+	}
 
-    public void setContent(List<Content> content) {
-        this.content = content;
-    }
+	public int getVersion() {
+		return version;
+	}
 
-    public List<Content> getContent() {
-        return content;
-    }
+	public void setContent(List<Content> content) {
+		this.content = content;
+	}
+
+	public List<Content> getContent() {
+		return content;
+	}
+
 }

@@ -8,10 +8,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Priority {
-    private String self;
-    private String iconUrl;
-    private String name;
-    private String id;
 
+	private String self;
+
+	private String iconUrl;
+
+	private String name;
+
+	private String id;
 
 }

@@ -2,23 +2,24 @@ package pojo.request.Add_Comment;
 
 public class ContentItem {
 
-    private String type;
+	private String type;
 
-    private String text;
+	private String text;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setText(String text) {
-        this.text = text;
-    }
+	public void setText(String text) {
+		this.text = text;
+	}
 
-    public String getText() {
-        return text;
-    }
+	public String getText() {
+		return text;
+	}
+
 }

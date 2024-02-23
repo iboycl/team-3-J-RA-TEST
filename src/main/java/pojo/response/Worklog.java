@@ -11,9 +11,12 @@ import java.util.List;
 @NoArgsConstructor
 public class Worklog {
 
-	private  int maxResults;
-	private  int startAt;
-	private  int total;
+	private int maxResults;
+
+	private int startAt;
+
+	private int total;
+
 	List<Worklog> worklogs;
 
 }

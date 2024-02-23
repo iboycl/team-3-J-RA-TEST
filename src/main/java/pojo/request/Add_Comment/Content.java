@@ -4,23 +4,24 @@ import java.util.List;
 
 public class Content {
 
-    private List<ContentItem> content;
+	private List<ContentItem> content;
 
-    private String type;
+	private String type;
 
-    public void setContent(List<ContentItem> content) {
-        this.content = content;
-    }
+	public void setContent(List<ContentItem> content) {
+		this.content = content;
+	}
 
-    public List<ContentItem> getContent() {
-        return content;
-    }
+	public List<ContentItem> getContent() {
+		return content;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
+
 }

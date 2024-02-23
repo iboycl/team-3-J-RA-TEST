@@ -50,8 +50,7 @@ public class UserSearchSteps extends BaseSteps {
 			});
 			soft.then(actualUsers.get(0).getDisplayName()).isEqualTo(displayName);
 			soft.then(actualUsers.get(0).getLocale()).isEqualTo(locale);
-			LOGGER.debug("Response gives the right user with displayName: {} and locale: {}", displayName,
-					locale);
+			LOGGER.debug("Response gives the right user with displayName: {} and locale: {}", displayName, locale);
 		}
 		else {
 			then(response.asPrettyString().contains(message)).isTrue();

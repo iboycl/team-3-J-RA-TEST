@@ -8,8 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Watches {
-    private String self;
-    private int watchCount;
-    private boolean isWatching;
+
+	private String self;
+
+	private int watchCount;
+
+	private boolean isWatching;
 
 }

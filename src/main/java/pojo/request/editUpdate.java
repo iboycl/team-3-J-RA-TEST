@@ -10,6 +10,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class editUpdate {
-    private List<Labels> labels;
-    private List<EditSummary> editSummaries;
+
+	private List<Labels> labels;
+
+	private List<EditSummary> editSummaries;
+
 }

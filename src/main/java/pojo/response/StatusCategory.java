@@ -8,10 +8,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StatusCategory {
-    private String self;
-    private int id;
-    private String key;
-    private String colorName;
-    private String name;
+
+	private String self;
+
+	private int id;
+
+	private String key;
+
+	private String colorName;
+
+	private String name;
 
 }

@@ -8,17 +8,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Issue {
-    private String expand;
-    private String id;
-    private String self;
-    private String key;
-    private Fields fields;
 
+	private String expand;
 
+	private String id;
 
+	private String self;
 
+	private String key;
 
-
-
+	private Fields fields;
 
 }

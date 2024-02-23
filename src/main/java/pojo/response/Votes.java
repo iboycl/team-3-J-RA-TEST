@@ -8,8 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Votes {
-    private  String self;
-    private  int votes;
-    private  boolean hasVoted;
+
+	private String self;
+
+	private int votes;
+
+	private boolean hasVoted;
 
 }

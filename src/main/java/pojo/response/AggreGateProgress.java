@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AggreGateProgress {
-    private int progress;
-    private int total;
+
+	private int progress;
+
+	private int total;
+
 }

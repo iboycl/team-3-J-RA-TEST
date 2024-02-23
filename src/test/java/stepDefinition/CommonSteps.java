@@ -37,7 +37,6 @@ public class CommonSteps extends BaseSteps {
 		logger.info("The authentication is completed to reach jira apis");
 	}
 
-
 	@Then("The status code should be {int}")
 	public void theStatusCodeShouldBe(int statusCode) {
 		Assertions.assertThat(response.getStatusCode()).isEqualTo(statusCode);

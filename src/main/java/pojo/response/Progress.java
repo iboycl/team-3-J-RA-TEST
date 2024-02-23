@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Progress {
-    private int progress;
-    private int total;
+
+	private int progress;
+
+	private int total;
 
 }

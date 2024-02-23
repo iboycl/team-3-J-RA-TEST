@@ -10,32 +10,32 @@ import lombok.NoArgsConstructor;
 
 public class SingleUser {
 
-    private String accountId;
+	private String accountId;
 
-    private String accountType;
+	private String accountType;
 
-    private boolean active;
+	private boolean active;
 
-    private ApplicationRoles applicationRoles;
+	private ApplicationRoles applicationRoles;
 
-    private AvatarUrls avatarUrls;
+	private AvatarUrls avatarUrls;
 
-    private String displayName;
+	private String displayName;
 
-    private String emailAddress;
+	private String emailAddress;
 
-    private Groups groups;
+	private Groups groups;
 
-    private String key;
+	private String key;
 
-    private String name;
+	private String name;
 
-    private String self;
+	private String self;
 
-    private String timeZone;
+	private String timeZone;
 
-    private String locale;
+	private String locale;
 
-    private String expand;
+	private String expand;
 
 }

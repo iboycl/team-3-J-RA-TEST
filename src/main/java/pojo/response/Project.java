@@ -9,19 +9,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Project {
 
-    private AvatarUrls avatarUrls;
+	private AvatarUrls avatarUrls;
 
-    private String id;
+	private String id;
 
-    private String key;
+	private String key;
 
-    private String name;
+	private String name;
 
-    private String self;
+	private String self;
 
-    private String projectTypeKey;
+	private String projectTypeKey;
 
-    private boolean simplified;
-
+	private boolean simplified;
 
 }

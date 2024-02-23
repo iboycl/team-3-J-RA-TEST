@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 
 public class Groups {
 
-    String[] items = new String[0];
+	String[] items = new String[0];
 
-    private int size;
+	private int size;
 
 }

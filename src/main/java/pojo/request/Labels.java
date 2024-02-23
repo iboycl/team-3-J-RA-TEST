@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Labels {
-    private String add;
-    private String remove;
+
+	private String add;
+
+	private String remove;
 
 }

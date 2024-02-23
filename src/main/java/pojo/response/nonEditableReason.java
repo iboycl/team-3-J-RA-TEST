@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class nonEditableReason {
-    private String reason;
-    private String  message;
+
+	private String reason;
+
+	private String message;
+
 }

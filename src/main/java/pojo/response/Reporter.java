@@ -8,14 +8,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reporter {
-    private String self;
-    private String accountId;
-    private String emailAddress;
-    private AvatarUrls avatarUrls;
-    private String displayName;
-    private boolean active;
-    private String timeZone;
-    private String accountType;
 
+	private String self;
+
+	private String accountId;
+
+	private String emailAddress;
+
+	private AvatarUrls avatarUrls;
+
+	private String displayName;
+
+	private boolean active;
+
+	private String timeZone;
+
+	private String accountType;
 
 }

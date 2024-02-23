@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EditBody {
-    private pojo.request.editFields editFields;
-    private pojo.request.editUpdate editUpdate;
+
+	private pojo.request.editFields editFields;
+
+	private pojo.request.editUpdate editUpdate;
+
 }

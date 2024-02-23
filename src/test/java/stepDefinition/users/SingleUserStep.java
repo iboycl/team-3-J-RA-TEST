@@ -10,7 +10,6 @@ import org.assertj.core.api.Assertions;
 import pojo.response.SingleUser;
 import stepDefinition.BaseSteps;
 
-
 import java.io.File;
 
 import static io.restassured.RestAssured.given;
@@ -30,7 +29,6 @@ public class SingleUserStep extends BaseSteps {
 			.basic(jiraUserName, jiraToken)
 			.get(userEndpoint + "?accountId=63d64f5528cddcc7076fbafd");
 		LOGGER.info("I send a Get request user endpoint");
-
 
 	}
 

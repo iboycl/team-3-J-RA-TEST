@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class IssueLinks {
 
 	private String id;
+
 	private Type type;
 
 }

@@ -14,7 +14,7 @@ public class Description {
 	private String type;
 
 	private int version;
-	private List<Content> content;
 
+	private List<Content> content;
 
 }
