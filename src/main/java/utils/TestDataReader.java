@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class TestDataReader {
 
+
     @SneakyThrows
     public static <T> T dataReader(String path, Class<T> typeValue){
         ObjectMapper mapper = new ObjectMapper();
@@ -26,3 +27,6 @@ public class TestDataReader {
         }
     }
 }
+
+
+
