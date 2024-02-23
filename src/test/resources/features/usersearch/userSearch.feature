@@ -1,9 +1,10 @@
-@UserSearch
+@userSearch @endToEnd
 Feature: Validate User Search Procedure
 
   Background:
     Given The user has Authentication and ready to connect
 
+  @positiveTest @GET
   Scenario Outline: Validate user search
     When I send a GET request to user search endpoint with "<queryParam>"
     Then The response status code should be <statusCode>
@@ -15,6 +16,7 @@ Feature: Validate User Search Procedure
       | mehmet     | 200        | Mehmet BİLGİÇ | 712020:a45a425e-2989-4425-b569-dda696c73fa4 |                                  |
       |            | 400        |               |                                             | query parameter must be provided |
 
+  @negativeTest @GET
   Scenario: Validate user search without authorization
     When I send a GET request to user search endpoint without authorization
     Then The response status code should be 401

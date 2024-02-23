@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.ıssueAttachments;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 
+import stepDefinition.BaseSteps;
 import utils.APIutils;
 
 import java.io.File;

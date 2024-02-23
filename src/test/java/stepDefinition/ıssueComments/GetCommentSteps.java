@@ -1,9 +1,10 @@
-package stepDefinition;
+package stepDefinition.ıssueComments;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
+import stepDefinition.BaseSteps;
 import utils.APIutils;
 
 public class GetCommentSteps extends BaseSteps {

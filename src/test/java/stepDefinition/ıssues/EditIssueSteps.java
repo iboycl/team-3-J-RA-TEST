@@ -1,8 +1,9 @@
-package stepDefinition;
+package stepDefinition.ıssues;
 
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import stepDefinition.BaseSteps;
 
 import static io.restassured.RestAssured.given;
 

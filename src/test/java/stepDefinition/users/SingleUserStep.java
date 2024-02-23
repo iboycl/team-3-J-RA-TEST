@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.users;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import pojo.response.SingleUser;
+import stepDefinition.BaseSteps;
 
 
 import java.io.File;

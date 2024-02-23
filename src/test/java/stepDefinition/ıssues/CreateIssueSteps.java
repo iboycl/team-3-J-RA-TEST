@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.ıssues;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -7,6 +7,8 @@ import io.restassured.http.ContentType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pojo.request.Issue;
+import stepDefinition.BaseSteps;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

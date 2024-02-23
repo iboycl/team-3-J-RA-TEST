@@ -1,11 +1,10 @@
-package stepDefinition;
+package stepDefinition.ıssues;
 
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pojo.response.issueRes;
+import stepDefinition.BaseSteps;
 import utils.APIutils;
-import utils.TestDataReader;
 
 public class deleteIssueSteps extends BaseSteps {
 

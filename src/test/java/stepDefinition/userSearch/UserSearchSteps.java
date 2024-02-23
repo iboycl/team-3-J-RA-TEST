@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.userSearch;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -7,6 +7,7 @@ import io.restassured.http.ContentType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pojo.response.User;
+import stepDefinition.BaseSteps;
 
 import java.util.HashMap;
 import java.util.List;

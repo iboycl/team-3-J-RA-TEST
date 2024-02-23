@@ -1,9 +1,10 @@
-@Issues
+@issues @endToEnd
 Feature: Issue Procedures
 
   Background:
     Given The user has Authentication and ready to connect
 
+  @POST
   Scenario Outline: Validate creation of issue
 
     When I set the request body for creating a new issue
@@ -29,6 +30,7 @@ Feature: Issue Procedures
       | 400        | SCRUM      |                 | Story         | INVALID_INPUT                     |
       | 400        | SCRUM      | text            |               | Specify an issue type             |
 
+  @negativeTest @POST
   Scenario: Validate unsuccessful creation of issue without authorization
     When I set the request body for creating a new issue
       | projectKey         | SCRUM                                   |
