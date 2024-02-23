@@ -12,7 +12,7 @@ Feature: Validate User Search Procedure
 
     Examples:
       | queryParam | statusCode | displayName   | locale | message                          |
-      | ibo        | 200        | ibrahim       | en_US  |                                  |
+      | ibrahim    | 200        | ibrahim       | en_US  |                                  |
       | mehmet     | 200        | Mehmet BİLGİÇ | tr_TR  |                                  |
       |            | 400        |               |        | query parameter must be provided |
 
