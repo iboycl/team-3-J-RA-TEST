@@ -41,9 +41,6 @@ public class APIutils {
 			.post(endpoint);
 	}
 
-	public static Response sendPutRequest(RequestSpecification request, String endpoint, Object body) {
-		return request.contentType(ContentType.JSON).accept(ContentType.JSON).body(body).when().put(endpoint);
-	}
 
 	public static Response sendDeleteRequest(RequestSpecification request, String endpoint) {
 		return request.when().delete(endpoint);
@@ -90,4 +87,13 @@ public class APIutils {
 		return commentObject.getString("id");
 	}
 
+	public static Response sendPutRequest(RequestSpecification request, String url, Object payload){
+		return request
+				.contentType(ContentType.JSON)
+				.body(payload)
+				.when()
+				.get(url)
+				.then().log().all()
+				.extract().response();
+	}
 }

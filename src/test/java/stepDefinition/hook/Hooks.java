@@ -17,7 +17,7 @@ public class Hooks extends BaseSteps {
 	public void setUp(Scenario scenario) {
 		Locale.setDefault(Locale.US);
 
-		LOGGER.info("::::::::::::::: TEST INFORMARION :::::::::::::::");
+		LOGGER.info("::::::::::::::: TEST INFORMATION :::::::::::::::");
 		LOGGER.info("Executing scenario: " + scenario.getName());
 	}
 
