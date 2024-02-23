@@ -9,13 +9,14 @@ import utils.TestDataReader;
 
 public class deleteIssueSteps extends BaseSteps {
 
-    Logger logger = LogManager.getLogger(deleteIssueSteps.class);
+	Logger logger = LogManager.getLogger(deleteIssueSteps.class);
 
-    @When("The user sends DELETE request to the delete issue endpoint with issue id as {string}")
-    public void theUserSendsDELETERequestToTheDeleteIssueEndpoint(String id) {
-        String endpoint = deleteIssue + "/" + id;
-        response = APIutils.sendDeleteRequest(request, endpoint);
+	@When("The user sends DELETE request to the delete issue endpoint with issue id as {string}")
+	public void theUserSendsDELETERequestToTheDeleteIssueEndpoint(String id) {
+		String endpoint = deleteIssue + "/" + id;
+		response = APIutils.sendDeleteRequest(request, endpoint);
 
-        logger.info("The user sends DELETE request to the delete issue endpoint");
-    }
+		logger.info("The user sends DELETE request to the delete issue endpoint");
+	}
+
 }

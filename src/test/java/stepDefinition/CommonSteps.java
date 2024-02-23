@@ -17,16 +17,17 @@ public class CommonSteps extends BaseSteps {
 	private static final Logger LOGGER = LogManager.getLogger(CommonSteps.class);
 
 	Logger logger = LogManager.getLogger(CommonSteps.class);
+
 	@Given("The user has Authentication and ready to connect")
 	public void theUserHasAuthenticationAndReadyToConnect() {
 		if (jiraUserName == null || jiraToken == null) {
 			jiraUserName = System.getenv("jiraUserName");
 			jiraToken = System.getenv("jiraToken");
 		}
-		request = given().auth().preemptive().basic(jiraUserName, jiraToken)
-				.contentType(ContentType.JSON);
+		request = given().auth().preemptive().basic(jiraUserName, jiraToken).contentType(ContentType.JSON);
 
 	}
+
 	@And("The authentication is completed to reach jira apis")
 	public void theAuthenticationIsCompletedToReachJiraApis() {
 		String username = System.getenv("jiraUserName");
@@ -46,21 +47,10 @@ public class CommonSteps extends BaseSteps {
 	static String jiraUserName;
 	static String jiraToken;
 
-
 	@Then("The response status code should be {int}")
 	public void theResponseStatusCodeShouldBe(int statusCode) {
 		then(response.getStatusCode()).isEqualTo(statusCode);
 		LOGGER.debug("Response status code is validated");
 	}
 
-	@Given("The user has Authentication and ready to connect")
-	public void theUserHasAuthenticationAndReadyToConnect() {
-		if (jiraUserName == null || jiraToken == null) {
-			jiraUserName = System.getenv("jiraUserName");
-			jiraToken = System.getenv("jiraToken");
-		}
-		request = given().auth().preemptive().basic(jiraUserName, jiraToken)
-				.contentType(ContentType.JSON);
-
-	}
 }

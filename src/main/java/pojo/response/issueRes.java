@@ -1,31 +1,35 @@
 package pojo.response;
 
 public class issueRes {
-    private String self;
-    private String id;
-    private String key;
 
-    public void setSelf(String self) {
-        this.self = self;
-    }
+	private String self;
 
-    public String getSelf() {
-        return self;
-    }
+	private String id;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	private String key;
 
-    public String getId() {
-        return id;
-    }
+	public void setSelf(String self) {
+		this.self = self;
+	}
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+	public String getSelf() {
+		return self;
+	}
 
-    public String getKey() {
-        return key;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getKey() {
+		return key;
+	}
+
 }

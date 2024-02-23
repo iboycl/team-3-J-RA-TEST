@@ -8,21 +8,23 @@ import org.assertj.core.api.Assertions;
 import stepDefinition.BaseSteps;
 import utils.APIutils;
 
-public class deleteAttachmentSteps extends BaseSteps{
+public class deleteAttachmentSteps extends BaseSteps {
 
-    Logger logger = LogManager.getLogger(deleteAttachmentSteps.class);
-    @When("The user sends DELETE request to delete attachment endpoint with attachment id")
-    public void theUserSendsDELETERequestToDeleteAttachmentEndpointWithAttachmentId() {
-        String endpoint = deleteIssueAttachmentEndpoint + "/" + attachmentId.substring(1, attachmentId.length() - 1);
-        response = APIutils.sendDeleteRequest(request, endpoint);
+	Logger logger = LogManager.getLogger(deleteAttachmentSteps.class);
 
-        logger.info("The user sends DELETE request to delete attachment endpoint with attachment id");
-    }
+	@When("The user sends DELETE request to delete attachment endpoint with attachment id")
+	public void theUserSendsDELETERequestToDeleteAttachmentEndpointWithAttachmentId() {
+		String endpoint = deleteIssueAttachmentEndpoint + "/" + attachmentId.substring(1, attachmentId.length() - 1);
+		response = APIutils.sendDeleteRequest(request, endpoint);
 
-    @And("Validate that the specified attachment deleted")
-    public void validateThatTheSpecifiedAttachmentDeleted() {
-        Assertions.assertThat(response.jsonPath().getList("fields.attachment")).isEmpty();
+		logger.info("The user sends DELETE request to delete attachment endpoint with attachment id");
+	}
 
-        logger.debug("Validate that the specified attachment deleted");
-    }
+	@And("Validate that the specified attachment deleted")
+	public void validateThatTheSpecifiedAttachmentDeleted() {
+		Assertions.assertThat(response.jsonPath().getList("fields.attachment")).isEmpty();
+
+		logger.debug("Validate that the specified attachment deleted");
+	}
+
 }

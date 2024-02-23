@@ -1,6 +1,5 @@
 package utils;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 
@@ -17,28 +16,28 @@ import java.io.IOException;
 
 public class TestDataWriter {
 
-  private static Logger LOGGER = LogManager.getLogger(TestDataWriter.class);
+	private static Logger LOGGER = LogManager.getLogger(TestDataWriter.class);
 
-    @SneakyThrows
-    public static void dataWriter(Object object, String path) {
-        ObjectMapper mapper = new ObjectMapper();
+	@SneakyThrows
+	public static void dataWriter(Object object, String path) {
+		ObjectMapper mapper = new ObjectMapper();
 
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(System.getProperty("user.dir") + "/src/test" +
-                    "/resources/test_data/" + path);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+		FileOutputStream fileOutputStream = null;
+		try {
+			fileOutputStream = new FileOutputStream(
+					System.getProperty("user.dir") + "/src/test" + "/resources/test_data/" + path);
+		}
+		catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
 
-        try {
-            mapper.writeValue(fileOutputStream, object);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
+		try {
+			mapper.writeValue(fileOutputStream, object);
+		}
+		catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	public void writeResponseBodyToJsonFile(String responseBody, String fileName) {
 
@@ -60,4 +59,3 @@ public class TestDataWriter {
 	}
 
 }
-

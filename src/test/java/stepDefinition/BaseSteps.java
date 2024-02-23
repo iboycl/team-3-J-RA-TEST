@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -24,7 +25,10 @@ public class BaseSteps {
 
 	protected ObjectMapper mapper = new ObjectMapper();
 
+	protected Gson gson = new Gson();
+
 	protected String deleteIssue;
+
 	protected String allUsersEndpoint;
 
 	protected String issueEndpoint;
@@ -38,6 +42,7 @@ public class BaseSteps {
 	protected String projectEndpoint;
 
 	protected String deleteIssueAttachmentEndpoint;
+
 	protected static String attachmentId;
 
 	protected String jiraUserName = System.getenv("jiraUserName");
@@ -56,7 +61,8 @@ public class BaseSteps {
 
 		jiraUserName = System.getenv("jiraUserName");
 		jiraToken = System.getenv("jiraToken");
-		deleteIssue= ConfigManager.getProperty("api.delete.issue.endpoint");
+		deleteIssue = ConfigManager.getProperty("api.delete.issue.endpoint");
 
 	}
+
 }
