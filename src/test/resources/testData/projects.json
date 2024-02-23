@@ -1,0 +1,22 @@
+[
+  {
+    "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+    "self": "https://inaracademygroup3.atlassian.net/rest/api/3/project/10000",
+    "id": "10000",
+    "key": "SCRUM",
+    "name": "Scrum Projem",
+    "avatarUrls": {
+      "48x48": "https://inaracademygroup3.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10414",
+      "24x24": "https://inaracademygroup3.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10414?size=small",
+      "16x16": "https://inaracademygroup3.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10414?size=xsmall",
+      "32x32": "https://inaracademygroup3.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10414?size=medium"
+    },
+    "projectTypeKey": "software",
+    "simplified": true,
+    "style": "next-gen",
+    "isPrivate": false,
+    "properties": {},
+    "entityId": "e5f16764-8078-4c50-a0c8-5855af0bcd25",
+    "uuid": "e5f16764-8078-4c50-a0c8-5855af0bcd25"
+  }
+]
