@@ -44,14 +44,14 @@ public class UserSearchSteps extends BaseSteps {
 	}
 
 	@And("The response should show right user with {string} {string} {string}")
-	public void theResponseShouldShowRightUserWith(String displayName, String accountID, String message) {
+	public void theResponseShouldShowRightUserWith(String displayName, String locale, String message) {
 		if (message.isBlank()) {
 			List<User> actualUsers = response.as(new TypeRef<>() {
 			});
 			soft.then(actualUsers.get(0).getDisplayName()).isEqualTo(displayName);
-			soft.then(actualUsers.get(0).getAccountId()).isEqualTo(accountID);
-			LOGGER.debug("Response gives the right user with displayName: {} and accountID: {}", displayName,
-					accountID);
+			soft.then(actualUsers.get(0).getLocale()).isEqualTo(locale);
+			LOGGER.debug("Response gives the right user with displayName: {} and locale: {}", displayName,
+					locale);
 		}
 		else {
 			then(response.asPrettyString().contains(message)).isTrue();
