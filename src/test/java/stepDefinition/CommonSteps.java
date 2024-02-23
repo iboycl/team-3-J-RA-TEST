@@ -30,5 +30,7 @@ public class CommonSteps extends BaseSteps {
 		request = given().auth().preemptive().basic(jiraUserName, jiraToken)
 				.contentType(ContentType.JSON);
 
+		LOGGER.debug("The user has Authentication and ready to connect");
+
 	}
 }

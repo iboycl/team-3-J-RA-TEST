@@ -31,4 +31,13 @@ public class APIutils {
 		/* .then().extract().response() */;
 	}
 
+	public static Response sendPutRequest(RequestSpecification request, String url, Object payload){
+		return request
+				.contentType(ContentType.JSON)
+				.body(payload)
+				.when()
+				.get(url)
+				.then().log().all()
+				.extract().response();
+	}
 }
