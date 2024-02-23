@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class sub_tasks {
 
-public class ApplicationRoles {
+	private String id;
 
-    String[] items = new String[0];
 
-    private int size;
+
+	private Type type;
 
 }

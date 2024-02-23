@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Description {
 
-public class ApplicationRoles {
+	private String type;
 
-    String[] items = new String[0];
+	private int version;
+	private List<Content> content;
 
-    private int size;
 
 }

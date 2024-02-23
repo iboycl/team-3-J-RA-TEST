@@ -7,11 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Insight {
 
-public class ApplicationRoles {
+	private String lastIssueUpdateTime;
 
-    String[] items = new String[0];
-
-    private int size;
+	private int totalIssueCount;
 
 }

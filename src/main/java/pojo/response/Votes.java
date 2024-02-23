@@ -7,11 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class ApplicationRoles {
-
-    String[] items = new String[0];
-
-    private int size;
+public class Votes {
+    private  String self;
+    private  int votes;
+    private  boolean hasVoted;
 
 }

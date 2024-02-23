@@ -6,7 +6,7 @@
 
     Scenario: Validate get a user
       When I send a Get request user endpoint
-      Then User informations are must be true
+      Then User informations are  must be true
       And The response status code should be 200
 
     Scenario: Get a user with wrong accountId

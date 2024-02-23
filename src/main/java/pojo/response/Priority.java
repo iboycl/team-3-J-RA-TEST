@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Priority {
+    private String self;
+    private String iconUrl;
+    private String name;
+    private String id;
 
-public class ApplicationRoles {
-
-    String[] items = new String[0];
-
-    private int size;
 
 }

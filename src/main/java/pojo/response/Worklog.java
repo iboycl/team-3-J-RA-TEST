@@ -4,14 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Worklog {
 
-public class ApplicationRoles {
-
-    String[] items = new String[0];
-
-    private int size;
+	private  int maxResults;
+	private  int startAt;
+	private  int total;
+	List<Worklog> worklogs;
 
 }

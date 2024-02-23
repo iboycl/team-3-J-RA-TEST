@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Body {
 
-public class ApplicationRoles {
+	private String type;
 
-    String[] items = new String[0];
+	private int version;
 
-    private int size;
+	private Content content;
 
 }

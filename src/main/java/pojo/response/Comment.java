@@ -7,11 +7,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Comment {
 
-public class ApplicationRoles {
+	private int maxResults;
 
-    String[] items = new String[0];
+	private int total;
 
-    private int size;
+	private int startAt;
+
+	private String self;
+
 
 }

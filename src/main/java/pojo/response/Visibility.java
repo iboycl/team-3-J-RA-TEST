@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Visibility {
 
-public class ApplicationRoles {
+	private String identifier;
 
-    String[] items = new String[0];
+	private String type;
 
-    private int size;
+	private String value;
 
 }

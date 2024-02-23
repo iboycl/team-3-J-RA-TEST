@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Type {
 
-public class ApplicationRoles {
+	private String id;
 
-    String[] items = new String[0];
+	private String inward;
 
-    private int size;
+	private String name;
+
+	private String outward;
 
 }

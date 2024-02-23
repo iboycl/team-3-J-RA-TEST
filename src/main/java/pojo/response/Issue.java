@@ -7,11 +7,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Issue {
+    private String expand;
+    private String id;
+    private String self;
+    private String key;
+    private Fields fields;
 
-public class ApplicationRoles {
 
-    String[] items = new String[0];
 
-    private int size;
+
+
+
+
 
 }

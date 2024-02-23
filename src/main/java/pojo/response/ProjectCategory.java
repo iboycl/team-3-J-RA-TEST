@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class ProjectCategory {
 
-public class ApplicationRoles {
+	private String description;
 
-    String[] items = new String[0];
+	private String id;
 
-    private int size;
+	private String name;
+
+	private String self;
 
 }

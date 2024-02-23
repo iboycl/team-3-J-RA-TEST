@@ -7,15 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Author {
 
 	private String accountId;
 
 	private String accountType;
 
 	private boolean active;
-
-	private AvatarUrls avatarUrls;
 
 	private String displayName;
 
@@ -25,8 +23,6 @@ public class User {
 
 	private String self;
 
-	private String locale;
-
-	private String emailAddress;
+	private AvatarUrls avatarUrls;
 
 }

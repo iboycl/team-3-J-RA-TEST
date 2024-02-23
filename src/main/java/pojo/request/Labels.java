@@ -1,4 +1,4 @@
-package pojo.response;
+package pojo.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,11 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class ApplicationRoles {
-
-    String[] items = new String[0];
-
-    private int size;
+public class Labels {
+    private String add;
+    private String remove;
 
 }

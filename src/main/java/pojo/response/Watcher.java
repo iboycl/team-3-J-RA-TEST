@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class Watcher {
 
-public class ApplicationRoles {
+	private boolean isWatching;
 
-    String[] items = new String[0];
+	private String self;
 
-    private int size;
+	private int watchCount;
+
+	private Watchers watchers;
 
 }

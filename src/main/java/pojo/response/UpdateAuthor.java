@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class UpdateAuthor {
 
-public class ApplicationRoles {
+	private String accountId;
 
-    String[] items = new String[0];
+	private String displayName;
 
-    private int size;
+	private boolean active;
+
+	private String self;
 
 }
