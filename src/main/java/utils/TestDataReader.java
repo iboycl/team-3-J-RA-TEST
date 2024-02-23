@@ -9,6 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class TestDataReader {
     static ObjectMapper mapper = new ObjectMapper();
     static FileInputStream fileInputStream;
@@ -33,5 +36,17 @@ public class TestDataReader {
         }
         return result;
     }
+
+	public static String readData2(String fileName) {
+		try {
+			String content = new String(Files.readAllBytes(Paths.get("src/test/resources/testData/" + fileName)));
+			return content;
+		}
+		catch (IOException e) {
+			System.err.println("Error reading JSON file: " + e.getMessage());
+			return null;
+		}
+	}
+
 
 }
