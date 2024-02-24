@@ -14,10 +14,10 @@
         <protocol>https</protocol>
 
         <!-- title of the document -->
-        <documentTitle>Booking - Test Report</documentTitle>
+        <documentTitle>JIRA REST API - Test Report</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName>Booking</reportName>
+        <reportName>JIRA REST API</reportName>
 
         <!-- timestamp format -->
         <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>

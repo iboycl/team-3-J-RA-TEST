@@ -14,7 +14,6 @@ public class Add_Comment_StepDefs extends BaseSteps {
 
 	private static final Logger LOGGER = LogManager.getLogger(Add_Comment_StepDefs.class);
 
-
 	@When("the user sends  GET request to Add Comments endpoint with specific key as {string}")
 	public void theUserSendsGetRequestToAddCommentsEndpointWithSpecificKeyAs(String key) {
 

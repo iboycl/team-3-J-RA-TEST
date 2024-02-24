@@ -6,5 +6,5 @@ Feature: Delete Comment
 
   @DELETE
   Scenario:Test add attachment to issue method functionality with valid issue id
-    When the user sends  DELETE request to Delete Comments endpoint with specific key as "SCRUM-202" and specific id as "10124"
+    When the user sends  DELETE request to Delete Comments endpoint with specific key as "SCRUM-202" and specific id as "10130"
     Then The response status code should be 204

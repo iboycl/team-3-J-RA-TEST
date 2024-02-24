@@ -26,7 +26,8 @@ public class UpdateCommentSteps extends BaseSteps {
 		updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
 		updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
 		response = APIutils.sendPutRequest(request, updateEndpoint, updateComment);
-		LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and comment id");
+		LOGGER
+			.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and comment id");
 	}
 
 	@And("The content of request should match with the content of the response")
@@ -43,7 +44,8 @@ public class UpdateCommentSteps extends BaseSteps {
 		updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
 		updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
 		response = APIutils.sendPutRequest(request, updateEndpoint, updateComment);
-		LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and invalid comment id");
+		LOGGER.debug(
+				"The user sends PUT request to the Update Comment endpoint with specific issue key and invalid comment id");
 	}
 
 	@And("The error message should be displayed")

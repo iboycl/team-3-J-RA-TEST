@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.projects;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.cucumber.java.en.And;
@@ -7,13 +7,12 @@ import io.restassured.common.mapper.TypeRef;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import pojo.response.RecentProjects.Projects;
+import stepDefinition.BaseSteps;
 import utils.TestDataWriter;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
-import static io.restassured.RestAssured.given;
 
 public class ProjectSteps extends BaseSteps {
 

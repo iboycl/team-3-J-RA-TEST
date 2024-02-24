@@ -10,7 +10,7 @@ Feature: Delete issue
     Then The status code should be <statusCode>
     Examples:
       | id          | statusCode |
-      | "SCRUM-198" | 204        |
+      | "SCRUM-247" | 204        |
 
 
 

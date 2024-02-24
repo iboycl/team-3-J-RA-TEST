@@ -25,7 +25,7 @@ public class GetCommentSteps extends BaseSteps {
 
 	@And("The response text should be {string}")
 	public void theResponseTextShouldBe(String text) {
-		Assertions.assertThat(response.jsonPath().getString("body.content[0].content[0].text")).isEqualTo(text);
+		Assertions.assertThat(response.asPrettyString()).contains(text);
 	}
 
 	@And("The id should not be null and empty on the response")

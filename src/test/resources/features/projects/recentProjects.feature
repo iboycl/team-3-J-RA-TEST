@@ -15,7 +15,7 @@ Feature: Get Recent Projects
     When The user sends get request to the Get Recent Project endpoint
     Then The response status code should be 200
     And The time should be under 2000 ms on the response
-    And The project name text should be "[Scrum Projem]" and the other properties as expected
+    And The project name text should be "[Scrum Projem, deneme]" and the other properties as expected
 
 
 
