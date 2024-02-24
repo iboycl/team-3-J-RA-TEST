@@ -45,13 +45,11 @@ public class BaseSteps {
 
 	protected static String attachmentId;
 
-	protected String jiraUserName = System.getenv("jiraUserName");
+	protected String jiraUserName;
 
-	protected String jiraToken = System.getenv("jiraToken");
+	protected String jiraToken;
 
 	protected static String commentText;
-
-	protected static String commentId;
 
 	public BaseSteps() {
 		baseURI = ConfigManager.getProperty("base.uri");

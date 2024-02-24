@@ -8,7 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ContentItem{
+public class ContentItem {
+
 	private String type;
+
 	private String text;
+
 }

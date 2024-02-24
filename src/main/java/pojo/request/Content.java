@@ -11,6 +11,9 @@ import java.util.List;
 @NoArgsConstructor
 
 public class Content {
-    private List<ContentItem> content;
-    private String type;
+
+	private List<ContentItem> content;
+
+	private String type;
+
 }

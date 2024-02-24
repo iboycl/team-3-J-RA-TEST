@@ -1,6 +1,5 @@
 package stepDefinition;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
@@ -15,26 +14,11 @@ public class CommonSteps extends BaseSteps {
 
 	private static final Logger LOGGER = LogManager.getLogger(CommonSteps.class);
 
-	Logger logger = LogManager.getLogger(CommonSteps.class);
-
-	@And("The authentication is completed to reach jira apis")
-	public void theAuthenticationIsCompletedToReachJiraApis() {
-		String username = System.getenv("jiraUserName");
-		String token = System.getenv("jiraToken");
-
-		request = request.auth().preemptive().basic(username, token);
-
-		logger.info("The authentication is completed to reach jira apis");
-	}
-
 	@Then("The status code should be {int}")
 	public void theStatusCodeShouldBe(int statusCode) {
 		Assertions.assertThat(response.getStatusCode()).isEqualTo(statusCode);
-		logger.debug("The status code should be " + statusCode);
+		LOGGER.debug("The status code should be " + statusCode);
 	}
-
-	static String jiraUserName;
-	static String jiraToken;
 
 	@Then("The response status code should be {int}")
 	public void theResponseStatusCodeShouldBe(int statusCode) {
@@ -48,10 +32,10 @@ public class CommonSteps extends BaseSteps {
 			jiraUserName = System.getenv("jiraUserName");
 			jiraToken = System.getenv("jiraToken");
 		}
-		request = given().auth().preemptive().basic(jiraUserName, jiraToken)
-				.contentType(ContentType.JSON);
+		request = given().auth().preemptive().basic(jiraUserName, jiraToken).contentType(ContentType.JSON);
 
 		LOGGER.debug("The user has Authentication and ready to connect");
 
 	}
+
 }

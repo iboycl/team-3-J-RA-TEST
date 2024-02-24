@@ -14,39 +14,43 @@ import java.io.IOException;
 
 public class UpdateCommentSteps extends BaseSteps {
 
-    private static final Logger LOGGER = LogManager.getLogger(UpdateCommentSteps.class);
+	private static final Logger LOGGER = LogManager.getLogger(UpdateCommentSteps.class);
 
-    String updateEndpoint;
+	String updateEndpoint;
 
-    UpdateComment updateComment;
-    @When("The user sends PUT request to the Update Comment endpoint with specific issue key {string} and comment id as {string}")
-    public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificIssueKeyAndCommentIdAs(String key, String id) throws IOException {
-        updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
-        updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
-        response = APIutils.sendPutRequest(request,updateEndpoint,updateComment);
-        LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and comment id");
-    }
+	UpdateComment updateComment;
 
-    @And("The content of request should match with the content of the response")
-    public void theContentOfRequestShouldMatchWithTheContentOfTheResponse() {
-        String actualText = response.jsonPath().getString("body.content[0].content[0].text");
-        String expectedText = updateComment.getBody().getContent().get(0).getContent().get(0).getText();
-        Assertions.assertThat(expectedText).isEqualTo(actualText);
-        LOGGER.info("The content of request should match with the content of the response");
-    }
+	@When("The user sends PUT request to the Update Comment endpoint with specific issue key {string} and comment id as {string}")
+	public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificIssueKeyAndCommentIdAs(String key,
+			String id) throws IOException {
+		updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
+		updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
+		response = APIutils.sendPutRequest(request, updateEndpoint, updateComment);
+		LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and comment id");
+	}
 
-    @When("The user sends PUT request to the Update Comment endpoint with specific issue key {string} and invalid comment id as {string}")
-    public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificIssueKeyAndInvalidCommentIdAs(String key, String id) throws IOException {
-        updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
-        updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
-        response = APIutils.sendPutRequest(request,updateEndpoint,updateComment);
-        LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and invalid comment id");
-    }
+	@And("The content of request should match with the content of the response")
+	public void theContentOfRequestShouldMatchWithTheContentOfTheResponse() {
+		String actualText = response.jsonPath().getString("body.content[0].content[0].text");
+		String expectedText = updateComment.getBody().getContent().get(0).getContent().get(0).getText();
+		Assertions.assertThat(expectedText).isEqualTo(actualText);
+		LOGGER.info("The content of request should match with the content of the response");
+	}
 
-    @And("The error message should be displayed")
-    public void theErrorMessageShouldBeDisplayed() {
-        String errorMessage = response.asPrettyString();
-        Assertions.assertThat(errorMessage).contains("error");
-        LOGGER.info("The error message should be displayed");
-    }
+	@When("The user sends PUT request to the Update Comment endpoint with specific issue key {string} and invalid comment id as {string}")
+	public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificIssueKeyAndInvalidCommentIdAs(String key,
+			String id) throws IOException {
+		updateEndpoint = issueEndpoint + "/" + key + "/comment/" + id;
+		updateComment = TestDataReader.readData("update_comment.json", UpdateComment.class);
+		response = APIutils.sendPutRequest(request, updateEndpoint, updateComment);
+		LOGGER.debug("The user sends PUT request to the Update Comment endpoint with specific issue key and invalid comment id");
+	}
+
+	@And("The error message should be displayed")
+	public void theErrorMessageShouldBeDisplayed() {
+		String errorMessage = response.asPrettyString();
+		Assertions.assertThat(errorMessage).contains("error");
+		LOGGER.info("The error message should be displayed");
+	}
+
 }

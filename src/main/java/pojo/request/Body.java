@@ -11,8 +11,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Body{
+public class Body {
+
 	private String type;
+
 	private int version;
+
 	private List<Content> content;
+
 }

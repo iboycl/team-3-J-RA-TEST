@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class UpdateComment{
+public class UpdateComment {
+
 	private Body body;
+
 }

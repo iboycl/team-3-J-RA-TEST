@@ -1,6 +1,5 @@
 package stepDefinition.ıssueComments;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
@@ -15,7 +14,6 @@ public class Add_Comment_StepDefs extends BaseSteps {
 
 	private static final Logger LOGGER = LogManager.getLogger(Add_Comment_StepDefs.class);
 
-	ObjectMapper mapper = new ObjectMapper();
 
 	@When("the user sends  GET request to Add Comments endpoint with specific key as {string}")
 	public void theUserSendsGetRequestToAddCommentsEndpointWithSpecificKeyAs(String key) {
