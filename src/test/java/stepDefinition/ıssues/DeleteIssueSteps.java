@@ -6,16 +6,16 @@ import org.apache.logging.log4j.Logger;
 import stepDefinition.BaseSteps;
 import utils.APIutils;
 
-public class deleteIssueSteps extends BaseSteps {
+public class DeleteIssueSteps extends BaseSteps {
 
-	Logger logger = LogManager.getLogger(deleteIssueSteps.class);
+	Logger LOGGER = LogManager.getLogger(DeleteIssueSteps.class);
 
 	@When("The user sends DELETE request to the delete issue endpoint with issue id as {string}")
 	public void theUserSendsDELETERequestToTheDeleteIssueEndpoint(String id) {
 		String endpoint = deleteIssue + "/" + id;
 		response = APIutils.sendDeleteRequest(request, endpoint);
 
-		logger.info("The user sends DELETE request to the delete issue endpoint");
+		LOGGER.info("The user sends DELETE request to the delete issue endpoint");
 	}
 
 }

@@ -19,7 +19,7 @@ import static utils.APIutils.sendGetRequest;
 
 public class UserSearchSteps extends BaseSteps {
 
-	private static final Logger LOGGER = LogManager.getLogger(UserSearchSteps.class);
+	Logger LOGGER = LogManager.getLogger(UserSearchSteps.class);
 
 	@When("I send a GET request to user search endpoint with {string}")
 	public void iSendAGETRequestToUserSearchEndpointWith(String param) {
@@ -28,11 +28,10 @@ public class UserSearchSteps extends BaseSteps {
 		if (!param.isBlank()) {
 			queryParams.put("query", param);
 			response = sendGetRequest(request, findUsersEndpoint, queryParams);
-			LOGGER.debug("Get request sent to {} with Query: {}", findUsersEndpoint, param);
-		}
-		else {
+			LOGGER.info("Sent GET request to user search endpoint with Query: {}", param);
+		} else {
 			response = sendGetRequest(request, findUsersEndpoint);
-			LOGGER.debug("Get request sent to {} without query", findUsersEndpoint);
+			LOGGER.info("Sent GET request to user search endpoint without query");
 		}
 
 	}
@@ -50,11 +49,10 @@ public class UserSearchSteps extends BaseSteps {
 			});
 			soft.then(actualUsers.get(0).getDisplayName()).isEqualTo(displayName);
 			soft.then(actualUsers.get(0).getLocale()).isEqualTo(locale);
-			LOGGER.debug("Response gives the right user with displayName: {} and locale: {}", displayName, locale);
-		}
-		else {
+			LOGGER.info("Response gives the right user with displayName: {} and locale: {}", displayName, locale);
+		} else {
 			then(response.asPrettyString().contains(message)).isTrue();
-			LOGGER.debug("Response contains the error message: {}", message);
+			LOGGER.info("Response contains the error message: {}", message);
 		}
 
 	}
@@ -62,7 +60,7 @@ public class UserSearchSteps extends BaseSteps {
 	@When("I send a GET request to user search endpoint without authorization")
 	public void iSendAGETRequestToUserSearchEndpointWithoutAuthorization() {
 		response = given().contentType(ContentType.JSON).get(findUsersEndpoint + "?query=ibo");
-
+		LOGGER.info("Sent GET request to user search endpoint without authorization");
 	}
 
 }

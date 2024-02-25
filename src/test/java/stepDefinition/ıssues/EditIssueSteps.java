@@ -16,7 +16,7 @@ public class EditIssueSteps extends BaseSteps {
 			+ "        \"summary\": [\n" + "            {\n" + "                \"set\": \"TEST - isimsiz2a\"\n"
 			+ "            }\n" + "        ]\n" + "    }\n" + "}";
 
-	private static final Logger LOGGER = LogManager.getLogger(GetIssueSteps.class);
+	Logger LOGGER = LogManager.getLogger(GetIssueSteps.class);
 
 	@When("I send a PUT request to edit issue endpoint")
 	public void ıSendAPUTRequestToEditIssueEndpoint() {

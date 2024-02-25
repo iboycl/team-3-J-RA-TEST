@@ -7,7 +7,7 @@ import stepDefinition.BaseSteps;
 
 public class DeleteComment_StepDefs extends BaseSteps {
 
-	private static final Logger LOGGER = LogManager.getLogger(DeleteComment_StepDefs.class);
+	Logger LOGGER = LogManager.getLogger(DeleteComment_StepDefs.class);
 
 	@When("the user sends  DELETE request to Delete Comments endpoint with specific key as {string} and specific id as {string}")
 	public void theUserSendsDELETERequestToDeleteCommentsEndpointWithSpecificKeyAsAndSpecificIdAs(String key,

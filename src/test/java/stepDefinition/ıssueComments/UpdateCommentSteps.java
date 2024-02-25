@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class UpdateCommentSteps extends BaseSteps {
 
-	private static final Logger LOGGER = LogManager.getLogger(UpdateCommentSteps.class);
+	Logger LOGGER = LogManager.getLogger(UpdateCommentSteps.class);
 
 	String updateEndpoint;
 

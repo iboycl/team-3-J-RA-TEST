@@ -19,7 +19,7 @@ import static utils.APIutils.sendPostRequest;
 
 public class CreateIssueSteps extends BaseSteps {
 
-	private static final Logger LOGGER = LogManager.getLogger(CreateIssueSteps.class);
+	Logger LOGGER = LogManager.getLogger(CreateIssueSteps.class);
 
 	Issue issue = new Issue();
 
@@ -36,19 +36,19 @@ public class CreateIssueSteps extends BaseSteps {
 		issue.getFields().getDescription().setVersion(Integer.parseInt(issueData.get("descriptionVersion")));
 		issue.getFields().getDescription().getContent().get(0).setType(issueData.get("contentType"));
 		issue.getFields()
-			.getDescription()
-			.getContent()
-			.get(0)
-			.getContent()
-			.get(0)
-			.setType(issueData.get("contContentType"));
+				.getDescription()
+				.getContent()
+				.get(0)
+				.getContent()
+				.get(0)
+				.setType(issueData.get("contContentType"));
 		issue.getFields()
-			.getDescription()
-			.getContent()
-			.get(0)
-			.getContent()
-			.get(0)
-			.setText(issueData.get("contContentText"));
+				.getDescription()
+				.getContent()
+				.get(0)
+				.getContent()
+				.get(0)
+				.setText(issueData.get("contContentText"));
 		issue.getFields().getIssuetype().setName(issueData.get("issueTypeName"));
 
 		requestBody = gson.toJson(issue);
@@ -76,13 +76,14 @@ public class CreateIssueSteps extends BaseSteps {
 
 	@And("I send a POST request to create a new issue without authorization")
 	public void iSendAPOSTRequestToCreateANewIssueWithoutAuthorization() {
-
 		response = given().auth()
-			.preemptive()
-			.basic("jiraUserName", "jiraToken")
-			.contentType(ContentType.JSON)
-			.body(requestBody)
-			.post(issueEndpoint);
+				.preemptive()
+				.basic("jiraUserName", "jiraToken")
+				.contentType(ContentType.JSON)
+				.body(requestBody)
+				.post(issueEndpoint);
+
+		LOGGER.debug("Request sent to {} without authorization", issueEndpoint);
 	}
 
 }

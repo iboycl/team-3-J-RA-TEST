@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import pojo.response.RecentProjects.Projects;
@@ -16,61 +18,72 @@ import java.util.List;
 
 public class ProjectSteps extends BaseSteps {
 
-	List<Projects> projects;
+    Logger LOGGER = LogManager.getLogger(ProjectSteps.class);
 
-	List<Projects> expectedProjects;
+    List<Projects> projects;
 
-	@When("The user sends get request to the Get Recent Project endpoint")
-	public void theUserSendsGetRequestToTheGetRecentProjectEndpoint() throws IOException {
-		response = request.get(recentProjectEndpoint);
-		projects = response.as(new TypeRef<>() {
-		});
-		expectedProjects = mapper.readValue(new File("src/test/resources/testData/projects.json"),
-				new TypeReference<>() {
-				});
-	}
+    List<Projects> expectedProjects;
 
-	@And("The user gets a list of projects")
-	public void theUserGetsAListOfProjects() {
-		projects = response.as(new TypeRef<>() {
-		});
-		Assertions.assertThat(!projects.isEmpty());
-	}
+    @When("The user sends get request to the Get Recent Project endpoint")
+    public void theUserSendsGetRequestToTheGetRecentProjectEndpoint() throws IOException {
+        response = request.get(recentProjectEndpoint);
+        projects = response.as(new TypeRef<>() {
+        });
+        expectedProjects = mapper.readValue(new File("src/test/resources/testData/projects.json"),
+                new TypeReference<>() {
+                });
 
-	@And("The time should be under {int} ms on the response")
-	public void theTimeShouldBeUnderMsOnTheResponse(int time) {
-		Assertions.assertThat(response.getTime()).isLessThan(time);
-	}
+        LOGGER.info("Sent GET request to Get Recent Project endpoint");
+    }
 
-	@And("The project name text should be {string} and the other properties as expected")
-	public void theProjectNameTextShouldBe(String name) {
-		SoftAssertions softAssertions = new SoftAssertions();
-		for (int i = 0; i < projects.size(); i++) {
-			softAssertions.assertThat(projects.get(i).getKey()).isEqualTo(expectedProjects.get(i).getKey());
-			softAssertions.assertThat(projects.get(i).getEntityId()).isEqualTo(expectedProjects.get(i).getEntityId());
-			softAssertions.assertThat(projects.get(i).getExpand()).isEqualTo(expectedProjects.get(i).getExpand());
-			softAssertions.assertThat(projects.get(i).getId()).isEqualTo(expectedProjects.get(i).getId());
-			softAssertions.assertThat(projects.get(i).getName()).isEqualTo(expectedProjects.get(i).getName());
-			softAssertions.assertThat(projects.get(i).isIsPrivate()).isEqualTo(expectedProjects.get(i).isIsPrivate());
-		}
-		softAssertions.assertAll();
-		Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo(name);
+    @And("The user gets a list of projects")
+    public void theUserGetsAListOfProjects() {
+        projects = response.as(new TypeRef<>() {
+        });
+        Assertions.assertThat(!projects.isEmpty());
 
-	}
+        LOGGER.info("User got a list of projects");
+    }
 
-	@When("The user sends get request to the Get Project endpoint with {string} key")
-	public void theUserSendsGetRequestToTheGetProjectEndpointWithKey(String key) throws IOException {
-		response = request.get(projectEndpoint + "/" + key);
+    @And("The time should be under {int} ms on the response")
+    public void theTimeShouldBeUnderMsOnTheResponse(int time) {
+        Assertions.assertThat(response.getTime()).isLessThan(time);
 
-		TestDataWriter testDataWriter = new TestDataWriter();
-		testDataWriter.writeResponseBodyToJsonFile(response.asString(), "project");
-		System.out.println(response.asString());
+        LOGGER.info("Response time is under {} ms", time);
+    }
 
-	}
+    @And("The project name text should be {string} and the other properties as expected")
+    public void theProjectNameTextShouldBe(String name) {
+        SoftAssertions softAssertions = new SoftAssertions();
+        for (int i = 0; i < projects.size(); i++) {
+            softAssertions.assertThat(projects.get(i).getKey()).isEqualTo(expectedProjects.get(i).getKey());
+            softAssertions.assertThat(projects.get(i).getEntityId()).isEqualTo(expectedProjects.get(i).getEntityId());
+            softAssertions.assertThat(projects.get(i).getExpand()).isEqualTo(expectedProjects.get(i).getExpand());
+            softAssertions.assertThat(projects.get(i).getId()).isEqualTo(expectedProjects.get(i).getId());
+            softAssertions.assertThat(projects.get(i).getName()).isEqualTo(expectedProjects.get(i).getName());
+            softAssertions.assertThat(projects.get(i).isIsPrivate()).isEqualTo(expectedProjects.get(i).isIsPrivate());
+        }
+        softAssertions.assertAll();
+        Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo(name);
 
-	@And("The project name text should  be {string}")
-	public void theProjectNameTextShouldBe2(String name) {
-		Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo(name);
-	}
+        LOGGER.info("Checked if project name text is {} and other properties are as expected", name);
+    }
 
+    @When("The user sends get request to the Get Project endpoint with {string} key")
+    public void theUserSendsGetRequestToTheGetProjectEndpointWithKey(String key) throws IOException {
+        response = request.get(projectEndpoint + "/" + key);
+
+        TestDataWriter testDataWriter = new TestDataWriter();
+        testDataWriter.writeResponseBodyToJsonFile(response.asString(), "project");
+
+        LOGGER.info("Sent GET request to Get Project endpoint with key {}", key);
+        LOGGER.info("Response body: {}", response.asString());
+    }
+
+    @And("The project name text should  be {string}")
+    public void theProjectNameTextShouldBe2(String name) {
+        Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo(name);
+
+        LOGGER.info("Checked if project name text is {}", name);
+    }
 }
